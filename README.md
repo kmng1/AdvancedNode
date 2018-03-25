@@ -8,3 +8,4 @@ Install nodemon and concurrently globally, remove form package.json
 
 ## Redis
 Redis server `https://github.com/MicrosoftArchive/redis/releases`
+Documentation: `https://www.npmjs.com/package/redis`
