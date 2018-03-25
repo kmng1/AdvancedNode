@@ -47,6 +47,7 @@ mongoose.Query.prototype.exec = async function() {
       console.log('hset res:', res);
     }
   });
+  client.expire(this.hashKey, 10);
   return result;
 };
 
