@@ -24,4 +24,4 @@ test('We can launch a browser', async () => {
   const text = await page.$eval('a.brand-logo', el => el.innerHTML);
   expect(text).toEqual('Blogster');
 
-});
+}, 10000);
