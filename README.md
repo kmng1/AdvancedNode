@@ -13,4 +13,5 @@ Documentation: `https://www.npmjs.com/package/redis`
 ## Test
 Jest: `https://facebook.github.io/jest/`   
 Puppeteer: `https://github.com/googlechrome/puppeteer`   
-
+safe-buffer: `https://www.npmjs.com/package/safe-buffer`
+keygrip: `https://www.npmjs.com/package/keygrip`
