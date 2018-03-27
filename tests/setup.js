@@ -7,3 +7,5 @@ mongoose.Promise = global.Promise;
 mongoose.connect(keys.mongoURI, { useMongoClient: true });
 
 // console.log('Jest Setup File');
+jest.setTimeout(20000);
+

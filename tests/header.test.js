@@ -3,7 +3,6 @@ const sessionFactory = require('./factories/sessionFactory');
 const userFactory = require('./factories/userFactory');
 
 let browser, page;
-const ASYNC_TIMEOUT = 30000;
 
 beforeEach(async () => {
   browser = await puppeteer.launch({
@@ -26,18 +25,18 @@ test('Adds two numbers', () => {
 test('The header has the correct text', async () => {
   const text = await page.$eval('a.brand-logo', el => el.innerHTML);
   expect(text).toEqual('Blogster');
-}, ASYNC_TIMEOUT);
+});
 
 test('Clicking login starts oauth flow', async () => {
   await page.click('.right a');
   const url = await page.url();
   expect(url).toMatch(/accounts\.google\.com/);
-}, ASYNC_TIMEOUT);
+});
 
 test('The header has the correct text', async () => {
   const text = await page.$eval('a.brand-logo', el => el.innerHTML);
   expect(text).toEqual('Blogster');
-}, ASYNC_TIMEOUT);
+});
 
 // test.only('When signed in, show logout button', async () => {
 test('When signed in, show logout button', async () => {
@@ -51,5 +50,5 @@ test('When signed in, show logout button', async () => {
 
   const text = await page.$eval('a[href="/auth/logout"]', el => el.innerHTML);
   expect(text).toEqual('Logout');
-}, ASYNC_TIMEOUT);
+});
 
