@@ -18,4 +18,3 @@ keygrip: `https://www.npmjs.com/package/keygrip`
 ## CI
 YAML Converter: `https://codebeautify.org/yaml-to-json-xml-csv`    
 Travis CI: `https://docs.travis-ci.com/user/database-setup/`
-
