@@ -61,8 +61,13 @@ class CustomPage {   // or just Page
     }, path, data);
   }
 
+  execRequests(actions) {
+    return Promise.all(   // wait for all promises are returned
+      actions.map(({ method, path, data }) => {
+        return this[method](path, data);   // returns an array of promises
+      })
+    );
+  }
 }
-
-
 
 module.exports = CustomPage;

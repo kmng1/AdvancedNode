@@ -11,7 +11,6 @@ afterEach(async () => {
   await page.close();
 });
 
-
 describe('When logged in', async () => {
   beforeEach(async () => {
     await page.login();
@@ -61,6 +60,27 @@ describe('When logged in', async () => {
 });
 
 describe('User is not logged in', async () => {
+  const actions = [{
+    method: 'get',
+    path: '/api/blogs',
+  },{
+    method: 'post',
+    path: '/api/blogs',
+    data: {
+      title: 'T',
+      content: 'C'
+    }
+  }];
+
+  test('Blog related actions are prohibited', async() => {
+    const results = await page.execRequests(actions);
+
+    for (let result of results) {
+      expect(result).toEqual({error: 'You must log in!'});
+    }
+  });
+
+/* These two tests are consolidated inot one test above
   test('User cannot create blog posts', async () => {
     const result = await page.post('/api/blogs', {title: 'My Title', content: 'My Content'});
     // console.log(result);
@@ -71,4 +91,5 @@ describe('User is not logged in', async () => {
     const result = await page.get('/api/blogs');
     expect(result).toEqual({error: 'You must log in!'});
   });
+*/
 });
