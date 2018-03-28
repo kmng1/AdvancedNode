@@ -31,18 +31,18 @@ Travis CI: `https://docs.travis-ci.com/user/database-setup/`
 
 ### S3 bucket CORS configuration
 Add rule after default rule
-<CORSRule>
+`<CORSRule>
     <AllowedOrigin>http://localhost:3000</AllowedOrigin>
     <AllowedMethod>PUT</AllowedMethod>
     <MaxAgeSeconds>3000</MaxAgeSeconds>
     <AllowedHeader>*</AllowedHeader>
-</CORSRule>
+</CORSRule>`
 
 ### IAM User Policy to upload to S3 bucket
 Create s3-blog user and attach s3-blog policy
-Service: S3
+`Service: S3
 Actions: All S3 actions
 Resources:
   bucket: s3-blog1
-  object: s3-blog1/*
+  object: s3-blog1/*`
 
